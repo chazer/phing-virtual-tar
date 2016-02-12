@@ -1,0 +1,31 @@
+{
+    "name": "chazer/phing-virtual-tar",
+    "type": "library",
+    "description": "Extended Phing TarTask for packing files with permissions",
+    "keywords": ["phing", "tar", "permissions"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aleksandr Chazov",
+            "email": "develop@chazer.ru"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear.php.net"
+        }
+    ],
+    "require": {
+        "mikey179/vfsStream": ">=1.3.0",
+        "pear-pear.php.net/Archive_Tar": ">=1.3.9",
+        "pear-pear.php.net/pear": ">=0.9",
+        "phing/phing": ">=2.4.13"
+    },
+    "require-dev": {
+        "symfony/console": "*"
+    },
+    "autoload": {
+        "psr-0": { "PhingVirtualTar\\": "src" }
+    }
+}
