@@ -90,6 +90,7 @@ class TarTask extends PhingTarTask
     public function setDestFile(PhingFile $destFile)
     {
         $this->tarFile = $destFile;
+        parent::setDestFile($destFile);
     }
 
     /**
@@ -99,6 +100,7 @@ class TarTask extends PhingTarTask
     public function setBasedir(PhingFile $baseDir)
     {
         $this->baseDir = $baseDir;
+        parent::setBasedir($baseDir);
     }
 
     /**
@@ -111,6 +113,7 @@ class TarTask extends PhingTarTask
     public function setIncludeEmptyDirs($bool)
     {
         $this->includeEmpty = (boolean) $bool;
+        parent::setIncludeEmptyDirs($bool);
     }
 
     /**
@@ -139,6 +142,7 @@ class TarTask extends PhingTarTask
                 $this->log("Ignoring unknown compression mode: " . $mode, Project::MSG_WARN);
                 $this->compression = null;
         }
+        parent::setCompression($mode);
     }
 
     /**
@@ -151,6 +155,7 @@ class TarTask extends PhingTarTask
     public function setPrefix($prefix)
     {
         $this->prefix = $prefix;
+        parent::setPrefix($prefix);
     }
 
     /**
@@ -349,6 +354,7 @@ class TarFileSet extends PhingTarFileSet
     {
         $octal = octdec($octalString);
         $this->mode = 0100000 | $octal;
+        parent::setMode($octalString);
     }
 
     /**
