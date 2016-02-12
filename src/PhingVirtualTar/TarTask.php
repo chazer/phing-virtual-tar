@@ -300,14 +300,6 @@ class TarTask extends PhingTarTask
                 $files[$i] = $vfs->addFile($realPath, $file, $mode);
             }
 
-            foreach ($files as $i => $file) {
-                echo $files[$i] . ': ';
-                echo (file_exists($files[$i]) ? ' exists' : 'not exists') . ' ';
-                echo decoct(stat($files[$i])['mode']) . ' ';
-                echo file_get_contents($files[$i]) . ' ';
-                echo PHP_EOL;
-            }
-
             $removePrefix = $vfs->getPrefix();
         }
 
