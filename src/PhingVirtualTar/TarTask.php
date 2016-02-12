@@ -342,7 +342,7 @@ class TarTask extends PhingTarTask
  */
 class TarFileSet extends PhingTarFileSet
 {
-    private $mode = 0100644;
+    private $mode = null;
 
     /**
      * A 3 digit octal string, specify the user, group and
@@ -352,9 +352,12 @@ class TarFileSet extends PhingTarFileSet
      */
     public function setMode($octalString)
     {
-        $octal = octdec($octalString);
-        $this->mode = 0100000 | $octal;
-        parent::setMode($octalString);
+        if ($octalString === "") {
+            $this->mode = null;
+        } else {
+            $octal = octdec($octalString);
+            $this->mode = 0100000 | $octal;
+        }
     }
 
     /**
