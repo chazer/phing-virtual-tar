@@ -8,6 +8,8 @@
 
 namespace PhingVirtualTar;
 
+require_once __DIR__ . '/../bootstrap.php';
+
 use Archive_Tar;
 use BuildException;
 use FileSet;
